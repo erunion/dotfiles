@@ -1,0 +1,34 @@
+#!/usr/bin/php
+<?php
+
+$memcached_binary = '/usr/local/bin/memcached';
+$beanstalkd_binary = '/usr/local/bin/beanstalkd';
+
+$me = array_shift($_SERVER['argv']);
+$action = array_shift($_SERVER['argv']);
+
+if (empty($action)) {
+  echo $me . " start|shutdown|restart\n"; 
+  exit;
+}
+
+switch ($action) {
+  case 'start':
+  case 'restart':
+    if ($action == 'restart') {      
+      echo shell_exec('killall ' . $memcached_binary);
+      echo shell_exec('killall ' . $beanstalkd_binary);
+    }
+
+    echo shell_exec($memcached_binary . ' -d -p11211 -unobody');
+    echo shell_exec($memcached_binary . ' -d -p11212 -unobody');
+    echo shell_exec($memcached_binary . ' -d -p11213 -unobody');
+    echo shell_exec($beanstalkd_binary . ' -d -l 127.0.0.1 -p 11300');
+  break;
+
+  case 'shutdown':
+    echo shell_exec('killall ' . $memcached_binary);
+    echo shell_exec('killall ' . $beanstalkd_binary);
+  break;
+}
+
