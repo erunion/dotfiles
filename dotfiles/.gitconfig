@@ -4,6 +4,7 @@
 	up = pull -v
 	pushit = push -v
 	logs = log --stat --decorate
+	lastcommit = log --stat --decorate -n 1
 	pop = stash pop
 [user]
 	email = lorderunion@gmail.com
