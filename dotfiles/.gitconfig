@@ -1,0 +1,12 @@
+[alias]
+	st = status
+	ci = commit
+	up = pull -v
+	pushit = push -v
+	logs = log --stat --decorate
+	pop = stash pop
+[user]
+	email = lorderunion@gmail.com
+	name = jonursenbach
+[branch]
+	autosetuprebase = always
