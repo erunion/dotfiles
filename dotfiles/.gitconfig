@@ -5,6 +5,7 @@
 	logs = log --stat --decorate
 	lastcommit = log --stat --decorate -n 1
 	pop = stash pop
+	me = git log --author="`git config --global --get user.name`" --after=yesterday --no-merges --reverse
 [user]
 	email = lorderunion@gmail.com
 	name = jonursenbach
