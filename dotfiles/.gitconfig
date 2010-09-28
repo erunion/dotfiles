@@ -6,6 +6,7 @@
 	lastcommit = log --stat --decorate -n 1
 	pop = stash pop
 	me = log --author="jonursenbach" --after=yesterday --no-merges --reverse
+	pushup = push origin master
 [user]
 	email = lorderunion@gmail.com
 	name = jonursenbach
