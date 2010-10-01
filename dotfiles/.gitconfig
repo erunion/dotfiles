@@ -1,4 +1,5 @@
 [alias]
+	co = checkout
 	st = status
 	ci = commit
 	up = pull -v
@@ -7,6 +8,7 @@
 	pop = stash pop
 	me = log --author="jonursenbach" --after=yesterday --no-merges --reverse
 	pushup = push origin master
+	diffs = diff --staged
 [user]
 	email = lorderunion@gmail.com
 	name = jonursenbach
