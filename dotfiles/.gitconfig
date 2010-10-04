@@ -8,6 +8,8 @@
 	pop = stash pop
 	me = log --author="jonursenbach" --after=yesterday --no-merges --reverse
 	pushup = push origin master
+	pushtag = push origin master
+	pushtags = push origin master --tags
 	diffs = diff --staged
 [user]
 	email = lorderunion@gmail.com
