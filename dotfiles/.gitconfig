@@ -26,6 +26,7 @@
 	pushtag = push origin master
 	pushtags = push origin master --tags
 	diffs = diff --staged
+	info = !sh -c '/home/$USER/config/git-info.sh'
 [user]
 	email = lorderunion@gmail.com
 	name = jonursenbach
