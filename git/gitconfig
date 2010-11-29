@@ -17,9 +17,10 @@
 	pushtags = push origin master --tags
 	pushup = push origin master
 	rank-contributors = !sh -c '~/dotfiles/bin/git-rank-contributors'
+	re-up = ~sh -c '~/dotfiles/bin/git-up'
 	st = status	
 	undo = !sh -c '~/dotfiles/bin/git-undo'
-	up = pull -v
+	up = !sh -c '~/dotfiles/bin/git-up'
 	wtf = !sh -c '~/dotfiles/bin/git-wtf'
 [branch]
 	autosetuprebase = always
