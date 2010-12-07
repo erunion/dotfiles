@@ -21,7 +21,7 @@
 	st = status	
 	undo = !sh -c '~/dotfiles/bin/git-undo'
 	up = !sh -c '~/dotfiles/bin/git-up'
-	wtf = !sh -c '~/dotfiles/bin/git-wtf'
+	wtf = !sh -c '~/dotfiles/bin/git-wtf --all-commits --long'
 [branch]
 	autosetuprebase = always
 [color]
