@@ -5,6 +5,7 @@
 	user = jonursenbach
 [alias]		
 	all = !sh -c '~/dotfiles/bin/git-all'
+	amend = commit --amend
 	ci = commit
 	co = checkout
 	diffs = diff --staged
