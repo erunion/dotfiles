@@ -1,0 +1,4 @@
+Store for any JS extensions you're using in Propane. Instead of having to edit
+that caveatPatchor.js file everytime there's a change to a module, just update
+the module and run "./build.php <caveatPatchor.js location>" to rebuild the
+file.
