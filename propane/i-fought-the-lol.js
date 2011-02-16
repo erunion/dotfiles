@@ -1,6 +1,6 @@
 /**
  * I Fought The LOL, the Campfire "enhancer"
- * v0.3b
+ * v0.4b
  * Aaron Draczynski
  * This file goes into your /Users/youraccount/Library/Application Support/Propane/unsupported/ folder
  * Restart Propane after installing or removing this script
@@ -59,7 +59,7 @@ Campfire.IFoughtTheLOL = Class.create({
         f.src = r + s + '.mp3';
         f.load();
         f.play();
-      } else if (u == false) {
+      } else if (e == '/sound ' && u == false) {
         b.innerHTML = c + '#888">Played a sound. If you turned off <strong>/mute</strong>, you would have heard it.</span>';
       }
       var i = b.querySelector('img');
