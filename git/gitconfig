@@ -21,6 +21,7 @@
 	re-up = ~sh -c '~/dotfiles/bin/git-up'
 	st = status	
 	undo = !sh -c '~/dotfiles/bin/git-undo'
+	unstage = reset HEAD
 	up = !sh -c '~/dotfiles/bin/git-up'
 	wtf = !sh -c '~/dotfiles/bin/git-wtf --all-commits --long'
 [branch]
