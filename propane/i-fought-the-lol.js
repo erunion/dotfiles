@@ -1,6 +1,6 @@
 /**
  * I Fought The LOL, the Campfire "enhancer"
- * v0.6b - February 28, 2011
+ * v0.7b - April 8, 2011
  * Aaron Draczynski
  * This file goes into your /Users/youraccount/Library/Application Support/Propane/unsupported/ folder
  * Restart Propane after installing or removing this script
@@ -48,10 +48,10 @@ Campfire.IFoughtTheLOL = Class.create({
           b.innerHTML = c + '#d5312b"><em>Why are you closed?!?</em></span>';
         }, true);
         f.addEventListener('error', function(e) {
-          b.innerHTML = c + '#d5312b"><em>You dun goofed.</em> [' + f.error.code + ']</span>';
+          b.innerHTML = c + '#d5312b"><em>You dun goofed,  ' + fs + ' could not be played.</em> [' + f.error.code + ']</span>';
         }, true);
         f.addEventListener('stalled', function(e) {
-          b.innerHTML = c + '#d5312b"><em>The audio player stalled while buffering ' + fs + ' &mdash; try the <a href="' + r + s + x + '" target="_blank" style="color:#d5312b">direct link</a>.</em></span>';
+          b.innerHTML = c + '#d5312b"><em>The audio player stalled while buffering ' + fs + ' &mdash, try the <a href="' + r + s + x + '" target="_blank" style="color:#d5312b">direct link</a>.</em></span>';
         }, true);
         f.addEventListener('suspend', function(e) {
           b.innerHTML = c + '#d5312b"><em>Consequences will never be the same.</em></span>';
@@ -94,6 +94,8 @@ Campfire.IFoughtTheLOL = Class.create({
             f = document.createElement(v[4]);
             msg = document.createElement('div');
         msg.style.padding = '6px 0 3px';
+        f.style.margin = '0 0 3px';
+        f.style.background = 'black';
         f.addEventListener('waiting', function(e) {
           msg.innerHTML = c + '#888"><em>Loading clip...</em></span>';
         }, true);
@@ -104,16 +106,23 @@ Campfire.IFoughtTheLOL = Class.create({
           msg.innerHTML = c + '#4f9707"><em>Playing clip...</em></span>';
         }, true);
         f.addEventListener('canplay', function() {
-          f.addEventListener('click', function() {
-            b.removeChild(f);
-            msg.innerHTML = c + '#888"><em>Clip removed.</em></span>';
-          }, false);
         }, true);
         f.addEventListener('error', function(e) {
           msg.innerHTML = c + '#d5312b"><em>You dun goofed.</em> [' + f.error.code + ']</span>';
         }, true);
         f.addEventListener('ended', function() {
-          msg.innerHTML = c + '#888"><em>Played clip. Click frame to collapse.</em></span>';
+          msg.innerHTML = c + '#888"><em><a class="replay">Replay clip</a> or <a class="collapse">collapse from view</a>.</em></span>';
+          var lr = msg.querySelector('.replay'),
+              lc = msg.querySelector('.collapse');
+          lr.addEventListener('click', function() {
+            f.currentTime = 0;
+            f.play();
+          }, false);
+          lc.addEventListener('click', function() {
+            b.removeChild(f);
+            msg.innerHTML = c + '#888"><em>Clip removed.</em></span>';
+            msg.style.padding = '2px 0 1px';
+          }, false);
         }, true);
         f.setAttribute('width', 480);
         f.setAttribute('height', 320);
@@ -121,6 +130,7 @@ Campfire.IFoughtTheLOL = Class.create({
         b.appendChild(f, b.firstChild);
         b.appendChild(msg);
         f.src = s;
+        f.preload = 'preload';
         f.load();
         f.play();
         window.scrollTo(0, document.body.scrollHeight);
