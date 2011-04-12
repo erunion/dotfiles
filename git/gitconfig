@@ -3,6 +3,8 @@
 	name = Jon Ursenbach
 [github]
 	user = jonursenbach
+[core]
+	excludesfile = ~/.gitignore
 [alias]		
 	all = !sh -c '~/dotfiles/bin/git-all'
 	amend = commit --amend
