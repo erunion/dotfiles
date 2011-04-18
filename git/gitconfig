@@ -23,7 +23,7 @@
 	undo = !sh -c '~/dotfiles/bin/git-undo'
 	unstage = reset HEAD
 	up = !sh -c '~/dotfiles/bin/git-up'
-	wtf = !sh -c '~/dotfiles/bin/git-wtf --all-commits --long'
+	wtf = !sh -c '~/dotfiles/bin/git-wtf --all-commits --long --all'
 [branch]
 	autosetuprebase = always
 [color]
