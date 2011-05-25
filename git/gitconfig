@@ -4,7 +4,7 @@
 [github]
 	user = jonursenbach
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 [alias]		
 	all = !sh -c '~/dotfiles/bin/git-all'
 	amend = commit --amend
