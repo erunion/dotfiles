@@ -13,6 +13,7 @@
 	diffs = diff --staged
 	info = !sh -c '~/dotfiles/bin/git-info'
 	lastcommit = log --stat --decorate -n 1
+	lasttag = !sh -c '~/dotfiles/bin/git-last-tag'
 	logs = log --stat --decorate
 	me = log --author="jonursenbach" --after=yesterday --no-merges --reverse
 	pop = stash pop

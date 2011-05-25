@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Pull the most recent tag in your repo.
+#
+# Stolen from: http://stackoverflow.com/questions/1404796/how-to-get-the-latest-tag-name-in-current-branch-in-git/1404862#1404862
+
+git describe $(git rev-list --tags --max-count=1)
