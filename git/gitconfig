@@ -26,6 +26,7 @@
 	undo = !sh -c '~/dotfiles/bin/git-undo'
 	unstage = reset HEAD
 	up = !sh -c '~/dotfiles/bin/git-up'
+        which = tag --contains
 	wtf = !sh -c '~/dotfiles/bin/git-wtf --all-commits --long --all'
 [branch]
 	autosetuprebase = always
