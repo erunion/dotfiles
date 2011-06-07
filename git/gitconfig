@@ -14,6 +14,7 @@
 	info = !sh -c '~/dotfiles/bin/git-info'
 	lastcommit = log --stat --decorate -n 1
 	lasttag = !sh -c '~/dotfiles/bin/git-last-tag'
+	xtags = for-each-ref refs/tags --format='%(taggerdate): %(refname)' --sort=-taggerdate --count
 	logs = log --stat --decorate
 	me = log --author="jonursenbach" --after=yesterday --no-merges --reverse
 	pop = stash pop
