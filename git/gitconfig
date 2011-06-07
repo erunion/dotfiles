@@ -13,8 +13,8 @@
 	diffs = diff --staged
 	info = !sh -c '~/dotfiles/bin/git-info'
 	lastcommit = log --stat --decorate -n 1
-	lasttag = !sh -c '~/dotfiles/bin/git-last-tag'
-	xtags = for-each-ref refs/tags --format='%(taggerdate): %(refname)' --sort=-taggerdate --count
+	lasttag = for-each-ref refs/tags --format='%(refname:short)' --sort=-taggerdate --count 1
+	xtags = for-each-ref refs/tags --format='%(refname:short) (%(taggerdate))' --sort=-taggerdate --count
 	logs = log --stat --decorate
 	me = log --author="jonursenbach" --after=yesterday --no-merges --reverse
 	pop = stash pop
