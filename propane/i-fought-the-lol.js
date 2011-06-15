@@ -1,9 +1,15 @@
 /**
  * I Fought The LOL, the Campfire "enhancer"
- * v0.7b - April 8, 2011
+ * v0.8b - June 14, 2011
  * Aaron Draczynski
+ * ================================================
  * This file goes into your /Users/youraccount/Library/Application Support/Propane/unsupported/ folder
  * Restart Propane after installing or removing this script
+ * ================================================
+ * What's new in v0.8b?
+ *   Replay button for sounds
+ *   External sound override is now working properly ("/sound -u http://mydomain.com/mysound.mp3")
+ *   Enhanced clip playback controls including fullscreen mode
  */
 
 Campfire.IFoughtTheLOL = Class.create({
@@ -25,7 +31,7 @@ Campfire.IFoughtTheLOL = Class.create({
         var s = t.substring(7,t.length).replace(/^\s\s*/, '').replace(/\s\s*$/, ''),
             fs = '"<strong>' + s + '</strong>"';
         if (t.substring(7,9) == '-u') {
-          r = t.substring(10,t.length);
+          r = b.querySelector('a').getAttribute('href');
           x = '';
           s = '';
           fs = 'external';
@@ -39,10 +45,10 @@ Campfire.IFoughtTheLOL = Class.create({
           b.innerHTML = c + '#888"><em>Loading sound...</em></span>';
         }, true);
         f.addEventListener('canplay', function() {
-          b.innerHTML = c + '#4f9707"><em>Playing sound...</em></span>';
+          b.innerHTML = c + '#4f9707"><em>Playing ' + fs + ' sound...</em></span>';
         }, true);
         f.addEventListener('canplaythrough', function() {
-          b.innerHTML = c + '#4f9707"><em>Playing sound...</em></span>';
+          b.innerHTML = c + '#4f9707"><em>Playing ' + fs + ' sound...</em></span>';
         }, true);
         f.addEventListener('empty', function(e) {
           b.innerHTML = c + '#d5312b"><em>Why are you closed?!?</em></span>';
@@ -51,7 +57,7 @@ Campfire.IFoughtTheLOL = Class.create({
           b.innerHTML = c + '#d5312b"><em>You dun goofed,  ' + fs + ' could not be played.</em> [' + f.error.code + ']</span>';
         }, true);
         f.addEventListener('stalled', function(e) {
-          b.innerHTML = c + '#d5312b"><em>The audio player stalled while buffering ' + fs + ' &mdash, try the <a href="' + r + s + x + '" target="_blank" style="color:#d5312b">direct link</a>.</em></span>';
+          b.innerHTML = c + '#d5312b"><em>The audio player stalled while buffering ' + fs + ' &mdash; try the <a href="' + r + s + x + '" target="_blank" style="color:#d5312b">direct link</a>.</em></span>';
         }, true);
         f.addEventListener('suspend', function(e) {
           b.innerHTML = c + '#d5312b"><em>Consequences will never be the same.</em></span>';
@@ -60,7 +66,12 @@ Campfire.IFoughtTheLOL = Class.create({
           b.innerHTML = c + '#d5312b"><em>Not my chair, not my problem.</em></span>';
         }, true);
         f.addEventListener('ended', function() {
-          b.innerHTML = c + '#888"><em>Played ' + fs + ' sound.</em></span>';
+          b.innerHTML = c + '#888"><em>Played ' + fs + ' sound. <a class="replay">Replay?</a></em></span>';
+          var br = b.querySelector('.replay');
+          br.addEventListener('click', function() {
+            f.currentTime = 0;
+            f.play();
+          }, false);
           f.pause();
           f.currentTime = 0;
           f.src = '';
@@ -68,7 +79,7 @@ Campfire.IFoughtTheLOL = Class.create({
           pn.removeChild(f);
         }, true);
         f.src = r + s;
-        if (u == false) {
+        if (u === false) {
           f.src += x;
         }
         f.play();
@@ -96,6 +107,7 @@ Campfire.IFoughtTheLOL = Class.create({
         msg.style.padding = '6px 0 3px';
         f.style.margin = '0 0 3px';
         f.style.background = 'black';
+        f.setAttribute('controls', 'controls');
         f.addEventListener('waiting', function(e) {
           msg.innerHTML = c + '#888"><em>Loading clip...</em></span>';
         }, true);
@@ -105,22 +117,15 @@ Campfire.IFoughtTheLOL = Class.create({
         f.addEventListener('canplaythrough', function() {
           msg.innerHTML = c + '#4f9707"><em>Playing clip...</em></span>';
         }, true);
-        f.addEventListener('canplay', function() {
-        }, true);
         f.addEventListener('error', function(e) {
           msg.innerHTML = c + '#d5312b"><em>You dun goofed.</em> [' + f.error.code + ']</span>';
         }, true);
         f.addEventListener('ended', function() {
-          msg.innerHTML = c + '#888"><em><a class="replay">Replay clip</a> or <a class="collapse">collapse from view</a>.</em></span>';
-          var lr = msg.querySelector('.replay'),
-              lc = msg.querySelector('.collapse');
-          lr.addEventListener('click', function() {
-            f.currentTime = 0;
-            f.play();
-          }, false);
+          msg.innerHTML = c + '#888"><em><a class="collapse">Collapse from view</a>.</em></span>';
+          var lc = msg.querySelector('.collapse');
           lc.addEventListener('click', function() {
+            f.parentNode.innerHTML = c + '#888"><em>Clip removed.</em></span>';
             b.removeChild(f);
-            msg.innerHTML = c + '#888"><em>Clip removed.</em></span>';
             msg.style.padding = '2px 0 1px';
           }, false);
         }, true);
@@ -139,7 +144,7 @@ Campfire.IFoughtTheLOL = Class.create({
       }
       if (m == '/mute') {
         if (Element.hasClassName(q.element, 'you')) {
-          if (z == false) {
+          if (z === false) {
             z = true;
             b.innerHTML = c + '#4b49bc"><em>You just turned mute <strong>on</strong>.</em></span>';
           } else {
