@@ -4,7 +4,7 @@
 [github]
 	user = jonursenbach
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 [alias]		
 	all = !sh -c '~/dotfiles/bin/git-all'
 	amend = commit --amend
@@ -13,6 +13,8 @@
 	diffs = diff --staged
 	info = !sh -c '~/dotfiles/bin/git-info'
 	lastcommit = log --stat --decorate -n 1
+	lasttag = for-each-ref refs/tags --format='%(refname:short)' --sort=-taggerdate --count 1
+	xtags = for-each-ref refs/tags --format='%(refname:short) (%(taggerdate))' --sort=-taggerdate --count
 	logs = log --stat --decorate
 	me = log --author="jonursenbach" --after=yesterday --no-merges --reverse
 	pop = stash pop
@@ -25,6 +27,7 @@
 	undo = !sh -c '~/dotfiles/bin/git-undo'
 	unstage = reset HEAD
 	up = !sh -c '~/dotfiles/bin/git-up'
+        which = tag --contains
 	wtf = !sh -c '~/dotfiles/bin/git-wtf --all-commits --long --all'
 [branch]
 	autosetuprebase = always
