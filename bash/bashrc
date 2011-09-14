@@ -83,6 +83,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias scavenge='find -L . | xargs grep -i'
 alias fixdate='sudo /etc/cron.daily/ntpdate'
+alias isrunning='ps aux | grep'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
