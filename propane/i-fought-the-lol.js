@@ -1,6 +1,6 @@
 /**
  * I Fought The LOL, the Campfire "enhancer"
- * v0.9a - January 11, 2012
+ * v0.99a - July 10, 2012
  * Aaron Draczynski
  * ================================================
  * This file goes into your /Users/youraccount/Library/Application Support/Propane/unsupported/ folder
@@ -9,11 +9,7 @@
  */
 
 Campfire.IFoughtTheLOL = Class.create({
-  initialize: function (q) {
-    this.chat = q;
-  },
-
-  bringTheLulz: function (q) {
+  bringTheLulz: function(q) {
     if (!q.pending() && q.kind === 'text') {
       var b = q.bodyElement(),
           t = b.innerText,
@@ -22,8 +18,9 @@ Campfire.IFoughtTheLOL = Class.create({
           u = false,
           r = v[0],
           x = v[2],
-          c = v[6];
+          c = v[7];
       if (e == '/sound ' && z == true) {
+        b.setAttribute('data-iftl', 'true');
         var s = t.substring(7,t.length).replace(/^\s\s*/, '').replace(/\s\s*$/, ''),
             fs = '"<strong>' + s + '</strong>"';
         if (t.substring(7,9) == '-u') {
@@ -34,6 +31,10 @@ Campfire.IFoughtTheLOL = Class.create({
           u = true;
         }
         var f = document.createElement(v[3]);
+        if (s.indexOf('|') != -1) {
+          s = s.substring(0, s.indexOf('|'));
+          fs = '"<strong>' + s + '</strong>"';
+        }
         f.addEventListener('loadstart', function() {
           b.innerHTML = c + '#888"><em>Loading sound...</em></span>';
         }, true);
@@ -41,10 +42,34 @@ Campfire.IFoughtTheLOL = Class.create({
           b.innerHTML = c + '#888"><em>Loading sound...</em></span>';
         }, true);
         f.addEventListener('canplay', function() {
-          b.innerHTML = c + '#4f9707"><em>Playing ' + fs + ' sound...</em></span>';
+          b.innerHTML = c + '#4f9707"><em>Playing ' + fs + ' sound... <a class="pause">Pause?</a></em></span>';
+          var bp = b.querySelector('.pause');
+          bp.addEventListener('click', function() {
+            if (bp.getAttribute('data-paused') == 'true') {
+              bp.innerHTML = 'Pause?';
+              bp.setAttribute('data-paused', 'false');
+              f.play();
+            } else {
+              bp.innerHTML = 'Resume?';
+              bp.setAttribute('data-paused', 'true');
+              f.pause();
+            }
+          }, false);
         }, true);
         f.addEventListener('canplaythrough', function() {
-          b.innerHTML = c + '#4f9707"><em>Playing ' + fs + ' sound...</em></span>';
+          b.innerHTML = c + '#4f9707"><em>Playing ' + fs + ' sound... <a class="pause">Pause?</a></em></span>';
+          var bp = b.querySelector('.pause');
+          bp.addEventListener('click', function() {
+            if (bp.getAttribute('data-paused') == 'true') {
+              bp.innerHTML = 'Pause?';
+              bp.setAttribute('data-paused', 'false');
+              f.play();
+            } else {
+              bp.innerHTML = 'Resume?';
+              bp.setAttribute('data-paused', 'true');
+              f.pause();
+            }
+          }, false);
         }, true);
         f.addEventListener('empty', function(e) {
           b.innerHTML = c + '#d5312b"><em>Why are you closed?!?</em></span>';
@@ -62,6 +87,20 @@ Campfire.IFoughtTheLOL = Class.create({
           b.innerHTML = c + '#888"><em>Played ' + fs + ' sound. <a class="replay">Replay?</a></em></span>';
           var br = b.querySelector('.replay');
           br.addEventListener('click', function() {
+            br.innerHTML = 'Pause?';
+            br.setAttribute('class', 'pause');
+            var bp = b.querySelector('.pause');
+            bp.addEventListener('click', function() {
+              if (bp.getAttribute('data-paused') == 'true') {
+                bp.innerHTML = 'Pause?';
+                bp.setAttribute('data-paused', 'false');
+                f.play();
+              } else {
+                bp.innerHTML = 'Resume?';
+                bp.setAttribute('data-paused', 'true');
+                f.pause();
+              }
+            }, false);
             f.currentTime = 0;
             f.play();
           }, false);
@@ -76,8 +115,12 @@ Campfire.IFoughtTheLOL = Class.create({
           f.src += x;
         }
         f.play();
+        // if (s.indexOf('|') != -1) {
+        //   f.currentTime = f.duration;
+        //   f.playbackRate = -1; 
+        // }
       } else if (e == '/sound ' && z == false) {
-        b.innerHTML = c + '#888">Played a sound. If you turned off <strong>/mute</strong>, you would have heard it.</span>';
+        b.innerHTML = c + '#888">Played a sound. If you turned off <strong>/mute</strong>, you would\'ve heard it.</span>';
       }
       var p = b.querySelector('img');
       if (p != null) {
@@ -93,6 +136,7 @@ Campfire.IFoughtTheLOL = Class.create({
         }
       }
       if (m == '/clip' && z == true) {
+        b.setAttribute('data-iftl', 'true');
         var l = b.querySelector('a'),
             s = l.getAttribute('href'),
             f = document.createElement(v[4]),
@@ -136,6 +180,7 @@ Campfire.IFoughtTheLOL = Class.create({
         b.innerHTML = c + '#888"><em>Played a clip. If you turned off <strong>/mute</strong>, you would\'ve seen it.</em></span>';
       }
       if (e == '/combo ' && z == true) {
+        b.setAttribute('data-iftl', 'true');
         var l = b.querySelector('a'),
             s = l.getAttribute('href'),
             f = document.createElement(v[5]),
@@ -156,7 +201,7 @@ Campfire.IFoughtTheLOL = Class.create({
         f.style.display = 'none';
         f.src = s;
         g.style.height = '90px';
-        g.src = r + 'r.gif';
+        g.src = r + 'r-pre.gif';
         b.innerHTML = '';
         b.appendChild(f, b.firstChild);
         b.appendChild(g, b.firstChild);
@@ -180,7 +225,19 @@ Campfire.IFoughtTheLOL = Class.create({
               j.play();
               window.scrollTo(0, document.body.scrollHeight);
             }, dl);
-            msg.innerHTML = c + '#4f9707"><em>Playing combo...</em></span>';
+            msg.innerHTML = c + '#4f9707"><em>Playing combo... <a class="pause">Pause sound?</a></em></em></span>';
+            var gp = msg.querySelector('.pause');
+            gp.addEventListener('click', function() {
+              if (gp.getAttribute('data-paused') == 'true') {
+                gp.innerHTML = 'Pause sound?';
+                gp.setAttribute('data-paused', 'false');
+                j.play();
+              } else {
+                gp.innerHTML = 'Resume sound?';
+                gp.setAttribute('data-paused', 'true');
+                j.pause();
+              }
+            }, false);
           }
         }, true);
         j.addEventListener('empty', function(e) {
@@ -188,7 +245,7 @@ Campfire.IFoughtTheLOL = Class.create({
         }, true);
         j.addEventListener('error', function(e) {
           msg.style.padding = '6px 0 3px';
-          g.src = r + 'f.gif';
+          g.src = r + 'f-pre.gif';
           msg.innerHTML = c + '#d5312b"><em>"<strong>' + k + '</strong>" isn\'t a valid sound.</em></span>';
         }, true);
         j.addEventListener('suspend', function(e) {
@@ -206,6 +263,8 @@ Campfire.IFoughtTheLOL = Class.create({
             j.play();
           }, false);
           cr.addEventListener('click', function() {
+            j.pause();
+            j.src = '';
             g.parentNode.innerHTML = c + '#888"><em>Combo removed.</em></span>';
             b.removeChild(f);
             msg.style.padding = '2px 0 1px';
@@ -230,7 +289,19 @@ Campfire.IFoughtTheLOL = Class.create({
               j.play();
               window.scrollTo(0, document.body.scrollHeight);
             }, dl);
-            msg.innerHTML = c + '#4f9707"><em>Playing combo...</em></span>';
+            msg.innerHTML = c + '#4f9707"><em>Playing combo... <a class="pause">Pause sound?</a></em></em></span>';
+            var gp = msg.querySelector('.pause');
+            gp.addEventListener('click', function() {
+              if (gp.getAttribute('data-paused') == 'true') {
+                gp.innerHTML = 'Pause sound?';
+                gp.setAttribute('data-paused', 'false');
+                j.play();
+              } else {
+                gp.innerHTML = 'Resume sound?';
+                gp.setAttribute('data-paused', 'true');
+                j.pause();
+              }
+            }, false);
           }
         }, false);
         window.scrollTo(0, document.body.scrollHeight);
@@ -238,6 +309,7 @@ Campfire.IFoughtTheLOL = Class.create({
         b.innerHTML = c + '#888"><em>Played a combo. If you turned off <strong>/mute</strong>, you would\'ve seen it.</em></span>';
       }
       if (m == '/mute') {
+        b.setAttribute('data-iftl', 'true');
         if (Element.hasClassName(q.element, 'you')) {
           if (z === false) {
             z = true;
@@ -247,24 +319,40 @@ Campfire.IFoughtTheLOL = Class.create({
             b.innerHTML = c + '#4b49bc"><em>You just turned mute <strong>off</strong>.</em></span>';
           }
         } else {
-          b.innerHTML = c + '#4b49bc"><em>=Just toggled their mute setting.</em></span>';
+          b.innerHTML = c + '#4b49bc"><em>Just toggled their mute setting.</em></span>';
         }
       }
     }
   },
 
-  onMessagesInserted: function (q) {
+  onMessagesInserted: function(q) {
     for (var i = 0; i < q.length; i++) {
       this.bringTheLulz(q[i]);
     }
+    var si = document.querySelector('#' + v[8]),
+        d = document.createElement(v[6]);
+    if (si !== null) {
+      si.parentNode.removeChild(si);
+    }
+    d.setAttribute('src', v[0] + v[8] + '.js?' + Math.floor(Math.random() * 1E10));
+    d.setAttribute('id', v[8]);
+    document.body.appendChild(d);
   },
 
-  onMessageAccepted: function (q, r) {
+  onMessageAccepted: function(q, r) {
     this.bringTheLulz(q);
+    var si = document.querySelector('#' + v[8]),
+        d = document.createElement(v[6]);
+    if (si !== null) {
+      si.parentNode.removeChild(si);
+    }
+    d.setAttribute('src', v[0] + v[8] + '.js?' + Math.floor(Math.random() * 1E10));
+    d.setAttribute('id', v[8]);
+    document.body.appendChild(d);
   }
 });
 
 var z = true,
-    v = ['http://papermodelplane.com/box/sounds/', 'http://www.papermodelplane.com/box/achievement_', '.mp3', 'audio', 'video', 'img', '<span style="color:'];
+    v = ['http://papermodelplane.com/box/sounds/', 'http://www.papermodelplane.com/box/achievement_', '.mp3', 'audio', 'video', 'img', 'script', '<span style="color:', 'iftl-init'];
 Campfire.Responders.push('IFoughtTheLOL');
 window.chat.installPropaneResponder('IFoughtTheLOL', 'andTheLOLWon');
