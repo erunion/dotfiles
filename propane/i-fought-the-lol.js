@@ -1,6 +1,6 @@
 /**
  * I Fought The LOL, the Campfire "enhancer"
- * v0.99a - July 10, 2012
+ * v0.99b - July 26, 2012
  * Aaron Draczynski
  * ================================================
  * This file goes into your /Users/youraccount/Library/Application Support/Propane/unsupported/ folder
@@ -106,7 +106,6 @@ Campfire.IFoughtTheLOL = Class.create({
           }, false);
           f.pause();
           f.currentTime = 0;
-          f.src = '';
           var pn = f.parentNode;
           pn.removeChild(f);
         }, true);
@@ -271,7 +270,6 @@ Campfire.IFoughtTheLOL = Class.create({
           });
           j.pause();
           j.currentTime = 0;
-          j.src = '';
           var pn = j.parentNode;
           pn.removeChild(j);
         }, true);
