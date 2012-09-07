@@ -1,0 +1,16 @@
+{
+	"auto_upgrade_last_run": 1347045206,
+	"installed_packages":
+	[
+		"LESS",
+		"Package Control",
+		"PhpDoc",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"Theme - Nexus",
+		"Theme - Phoenix",
+		"Theme - Soda",
+		"Tomorrow Color Schemes"
+	]
+}

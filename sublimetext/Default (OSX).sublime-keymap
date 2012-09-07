@@ -1,0 +1,10 @@
+[
+  { "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
+  { "keys": ["super+shift+e"], "command": "insert_snippet", "args": {"contents": "{i}${0:$SELECTION}{/i}"} },
+  { "keys": ["super+shift+/"], "command": "insert_snippet", "args": {"contents": "{*${0:$SELECTION}*}"} },
+  { "keys": ["super+shift+r"], "command": "reveal_in_side_bar"},
+  { "keys": ["home"], "command": "move_to", "args": {"to": "bol"} },
+  { "keys": ["end"], "command": "move_to", "args": {"to": "eol"} },
+  { "keys": ["shift+end"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+  { "keys": ["shift+home"], "command": "move_to", "args": {"to": "bol", "extend": true } }
+]
