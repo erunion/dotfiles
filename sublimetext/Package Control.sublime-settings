@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1347045206,
+	"auto_upgrade_last_run": 1347398811,
 	"installed_packages":
 	[
 		"LESS",
@@ -8,6 +8,7 @@
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeLinter",
+		"Theme - Aqua",
 		"Theme - Nexus",
 		"Theme - Phoenix",
 		"Theme - Soda",
