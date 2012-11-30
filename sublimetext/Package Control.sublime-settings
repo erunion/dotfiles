@@ -1,13 +1,13 @@
 {
-	"auto_upgrade_last_run": 1347398811,
+	"auto_upgrade_last_run": 1353950276,
 	"installed_packages":
 	[
+		"Dayle Rees Color Schemes",
 		"LESS",
 		"Package Control",
 		"PhpDoc",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
-		"SublimeLinter",
 		"Theme - Aqua",
 		"Theme - Nexus",
 		"Theme - Phoenix",
