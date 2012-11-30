@@ -145,3 +145,6 @@ PS2='> '
 PS4='+ '
 }
 pimp_prompt
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
