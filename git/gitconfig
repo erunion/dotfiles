@@ -18,6 +18,7 @@
 	logs = log --stat --decorate
 	me = log --author="jonursenbach" --after=yesterday --no-merges --reverse
 	pop = stash pop
+	pushheroku = push heroku master
 	pushtag = push origin master
 	pushtags = push origin master --tags
 	pushup = push origin master
