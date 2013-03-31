@@ -101,7 +101,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# adding rubygems to my path 
+# adding rubygems to my path
 export PATH=$PATH:/var/lib/gems/1.8/bin
 
 # adding npm modules to my path
@@ -129,7 +129,7 @@ pimp_prompt() {
   local       GREEN="\[\033[0;32m\]"
   local LIGHT_GREEN="\[\033[1;32m\]"
   local       WHITE="\[\033[0;37m\]"
-  local  WHITE_BOLD="\[\033[1;37m\]"  
+  local  WHITE_BOLD="\[\033[1;37m\]"
   local  LIGHT_GRAY="\[\033[0;37m\]"
   case $TERM in
     xterm*)
@@ -145,6 +145,8 @@ PS2='> '
 PS4='+ '
 }
 pimp_prompt
+
+export EDITOR=nano
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
