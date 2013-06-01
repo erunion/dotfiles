@@ -1,6 +1,6 @@
 /**
  * I Fought The LOL, the Campfire "enhancer"
- * v0.99b - July 26, 2012
+ * v0.99c - May 31, 2013
  * Aaron Draczynski
  * ================================================
  * This file goes into your /Users/youraccount/Library/Application Support/Propane/unsupported/ folder
@@ -116,7 +116,7 @@ Campfire.IFoughtTheLOL = Class.create({
         f.play();
         // if (s.indexOf('|') != -1) {
         //   f.currentTime = f.duration;
-        //   f.playbackRate = -1; 
+        //   f.playbackRate = -1;
         // }
       } else if (e == '/sound ' && z == false) {
         b.innerHTML = c + '#888">Played a sound. If you turned off <strong>/mute</strong>, you would\'ve heard it.</span>';
@@ -351,6 +351,6 @@ Campfire.IFoughtTheLOL = Class.create({
 });
 
 var z = true,
-    v = ['http://papermodelplane.com/box/sounds/', 'http://www.papermodelplane.com/box/achievement_', '.mp3', 'audio', 'video', 'img', 'script', '<span style="color:', 'iftl-init'];
+    v = ['http://iftl.pastfuture.com/sounds/', 'http://iftl.pastfuture.com/images/achievement_', '.mp3', 'audio', 'video', 'img', 'script', '<span style="color:', 'iftl-init'];
 Campfire.Responders.push('IFoughtTheLOL');
 window.chat.installPropaneResponder('IFoughtTheLOL', 'andTheLOLWon');
