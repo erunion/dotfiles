@@ -1,0 +1,10 @@
+{
+    "PHP": {
+        "php": "usr/bin/php",
+        "phpExtraPaths": [],
+        "phpConfigFile": "php.ini"
+    },
+    "JavaScript": {
+        "javascriptExtraPaths": []
+    }
+}
