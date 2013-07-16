@@ -1,0 +1,55 @@
+# This provisions a Ubuntu 12.04 LTS box with PHP 5.4, MySQL 5.5, Apache 2 and
+# node.js (latest).
+
+$script = <<SCRIPT
+echo "Provisioning..."
+
+apt-get update
+apt-get install -y debconf-utils
+
+## set up php5.4
+apt-get install -y python-software-properties
+add-apt-repository -y ppa:ondrej/php5
+
+apt-get update
+
+echo "mysql-server-5.5 mysql-server/root_password_again password password" | debconf-set-selections
+echo "mysql-server-5.5 mysql-server/root_password password password" | debconf-set-selections
+
+apt-get install -y build-essential apache2 php5 php5-curl php5-mcrypt curl \
+  python git mysql-server-5.5 mysql-client-core-5.5 php5-mysql php-pear php5-dev
+
+pear install PHP_CodeSniffer
+pecl install xdebug
+php5enmod xdebug
+
+## install nodejs
+if ! which node | grep '/usr/local/bin';then
+  echo "Installing node.js..."
+  wget -q http://nodejs.org/dist/node-latest.tar.gz
+  tar -xzvf node-latest.tar.gz && cd node-v*
+  ./configure
+  make
+  make install
+fi
+
+## install composer
+if ! which composer | grep '/usr/local/bin';then
+  echo "Installing Composer..."
+  curl -sS https://getcomposer.org/installer | php
+  mv composer.phar /usr/local/bin/composer
+fi
+
+rm -rf /var/www
+ln -fs /vagrant /var/www
+SCRIPT
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "precise64"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+
+  config.vm.synced_folder ".", "/vagrant", :owner => "www-data", :group => "www-data"
+  config.vm.provision :shell, :inline => $script
+
+  config.ssh.forward_agent = true
+end
