@@ -4,6 +4,7 @@
 	[
 		"EJS",
 		"Jade",
+		"Laravel Blade Highlighter",
 		"LESS",
 		"Package Control",
 		"PHP-Twig",

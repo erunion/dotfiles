@@ -1,0 +1,71 @@
+{{-- Echo --}}
+Hello, {{ $name }}.
+
+The current UNIX timestamp is {{ time() }}.
+
+{{-- Echo: Escape Output --}}
+Hello, {{{ $name }}}.
+
+{{-- Define Blade Layout --}}
+<html>
+    <body>
+        @section('sidebar')
+            This is the master sidebar.
+        @show
+
+        <div class="container">
+            @yield('content')
+        </div>
+    </body>
+</html>
+
+{{-- Use Blade Layout --}}
+@extends('layouts.master')
+
+@section('sidebar')
+    @parent
+
+    <p>This is appended to the master sidebar.</p>
+@stop
+
+@section('sidebar')
+    @overwrite
+
+    <p>This replaces the master sidebar.</p>
+@stop
+
+@section('content')
+    <p>This is my body content.</p>
+@stop
+
+{{-- If Statement --}}
+@if (count($records) > 0)
+    I have records!
+@else
+    I don't have any records!
+@endif
+
+@unless (Auth::check())
+    You are not signed in.
+@endunless
+
+{{-- Loops --}}
+@for ($i = 0; $i < 10; $i++)
+    The current value is {{ $i }}
+@endfor
+
+@foreach ($users as $user)
+    <p>This is user {{ $user->id }}</p>
+@endforeach
+
+@while (true)
+    <p>I'm looping forever.</p>
+@endwhile
+
+{{-- Include --}}
+@include('view.name')
+
+{{-- Language --}}
+@lang('language.line')
+
+@choice('language.line', 1);
