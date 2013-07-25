@@ -1,4 +1,4 @@
-SublimeCodeIntel v2.0.0 Release Notes
+SublimeCodeIntel v2.0.1 Release Notes
 =====================================
 [Please restart Sublime Text 2 after reading this. In case of trouble, please read the Troubleshooting section in the README]
 
@@ -52,29 +52,8 @@ Note that individual settings you include in your user settings will **completel
 replace the corresponding default setting, so you must provide that setting in its entirety.
 
 
-NEW FEATURES
-
-+ SublimeCodeIntel's openkomodo codeintel engine updated. The new codeintel is faster and more reliable.
-
-+ Sources have their own repositories at http://github.com/SublimeCodeIntel
-
-
 CHANGES/FIXES
 
-- Disables Sublime Text 2's auto_complete by default (new ``sublime_auto_complete`` setting)
+- Removed some Linux dependencies to GLIBC_2.4.
 
-- JavaScript and PHP: Do not include all files and directories from the project base directory while scanning.
-
-- JavaScript: Maximum directory depth is set to 2 (add explicit paths using javascriptExtraPaths).
-
-- PHP: Maximum directory depth is set to 5 (add explicit paths using phpExtraPaths).
-
-+ Snippets for functions inserted during autocomplete.
-
-+ Binary files for Linux, Windows and Mac OS X updated.
-
-+ Shortcuts for jump to definition have changed.
-
-- PHP and UDL languages bugs fixed.
-
-- Stability improved (Should no longer use 100% CPU all the time.)
+- Sublime Text 2 built-in auto complete no longer disabled by default (use `"sublime_auto_complete": false` setting instad).
