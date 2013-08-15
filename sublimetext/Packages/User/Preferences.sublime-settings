@@ -1,6 +1,6 @@
 {
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Theme - Nexus/Nexus.tmTheme",
+	"color_scheme": "Packages/User/Eiffel.tmTheme",
 	"default_encoding": "UTF-8",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "droid sans mono",
@@ -12,13 +12,14 @@
 		"SublimeCodeIntel"
 	],
 	"line_numbers": true,
+	"phoenix_tabs_medium": true,
 	"rulers":
 	[
 		80
 	],
 	"scroll_past_end": true,
 	"tab_size": 2,
-	"theme": "Soda Dark.sublime-theme",
+	"theme": "Phoenix Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": false
