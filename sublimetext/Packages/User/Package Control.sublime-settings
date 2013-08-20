@@ -2,11 +2,12 @@
 	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
+		"Dayle Rees Color Schemes",
+		"DocBlockr",
 		"Jade",
 		"Laravel Blade Highlighter",
 		"LESS",
 		"Package Control",
-		"PhpDoc",
 		"Puppet",
 		"SideBarEnhancements",
 		"Smarty",
