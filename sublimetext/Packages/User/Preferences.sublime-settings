@@ -4,7 +4,7 @@
 	"default_encoding": "UTF-8",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "droid sans mono",
-	"font_size": 14.0,
+	"font_size": 16.0,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
