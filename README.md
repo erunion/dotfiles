@@ -12,4 +12,6 @@ homesick symlink dotfiles
 ```
 
 ##### Sublime Text 2 Packages/Settings
-```./bin/symlink-sublime-packages```
+```
+./bin/symlink-sublime-packages
+```
