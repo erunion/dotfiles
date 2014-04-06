@@ -155,7 +155,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/packer:$PATH"
 
 # php 5.5 via homebrew
-export PATH="$(brew --prefix josegonzalez/php/php55)/bin:$PATH"
+export PATH="$(brew --prefix php55)/bin:$PATH"
 
 source ~/bin/git-completion.bash
 export CLICOLOR=1
