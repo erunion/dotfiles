@@ -1,0 +1,10 @@
+#!/bin/sh
+
+rm -rf ~/Library/Application\ Support/Sublime\ Text\ 2/Installed\ Packages/
+ln -s ~/.homesick/repos/dotfiles/sublimetext/Installed\ Packages/ ~/Library/Application\ Support/Sublime\ Text\ 2/Installed\ Packages
+
+rm -rf ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/
+ln -s ~/.homesick/repos/dotfiles/sublimetext/Installed\ Packages/ ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
+
+rm -rf ~/Library/Application\ Support/Sublime\ Text\ 2/Pristine\ Packages/
+ln -s ~/.homesick/repos/dotfiles/sublimetext/Installed\ Packages/ ~/Library/Application\ Support/Sublime\ Text\ 2/Pristine\ Packages
