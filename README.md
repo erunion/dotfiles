@@ -10,3 +10,6 @@ gem install homesick
 homesick clone jonursenbach/dotfiles
 homesick symlink dotfiles
 ```
+
+##### Sublime Text 2 Packages/Settings
+```./bin/symlink-sublime-packages```
