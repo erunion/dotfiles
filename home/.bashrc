@@ -150,13 +150,8 @@ export EDITOR=nano
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# Packer.io
-export PATH="/usr/local/packer:$PATH"
-
 # php 5.5 via homebrew
 export PATH="$(brew --prefix php55)/bin:$PATH"
 
 source ~/bin/git-completion.bash
 export CLICOLOR=1
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
