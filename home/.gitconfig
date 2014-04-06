@@ -6,12 +6,12 @@
 [core]
 	excludesfile = ~/.gitignore_global
 [alias]		
-	all = !sh -c '~/dotfiles/bin/git-all'
+	all = !sh -c '~/bin/git-all'
 	amend = commit --amend
 	ci = commit
 	co = checkout
 	diffs = diff --staged
-	info = !sh -c '~/dotfiles/bin/git-info'
+	info = !sh -c '~/bin/git-info'
 	lastcommit = log --stat --decorate -n 1
 	lasttag = for-each-ref refs/tags --format='%(refname:short)' --sort=-taggerdate --count 1
 	xtags = for-each-ref refs/tags --format='%(refname:short) (%(taggerdate))' --sort=-taggerdate --count
@@ -22,16 +22,16 @@
 	pushtag = push origin master
 	pushtags = push origin master --tags
 	pushup = push origin master
-	rank-contributors = !sh -c '~/dotfiles/bin/git-rank-contributors'
-	re-up = ~sh -c '~/dotfiles/bin/git-up'
+	rank-contributors = !sh -c '~/bin/git-rank-contributors'
+	re-up = ~sh -c '~/bin/git-up'
 	st = status	
 	standup = log --since='1 day ago' --oneline --author='jon@ursenba.ch'
-	undo = !sh -c '~/dotfiles/bin/git-undo'
+	undo = !sh -c '~/bin/git-undo'
 	unstage = reset HEAD
-	up = !sh -c '~/dotfiles/bin/git-up'
-        whichtag = tag --contains
+	up = !sh -c '~/bin/git-up'
+	whichtag = tag --contains
 	whichbranch = branch --contains
-	wtf = !sh -c '~/dotfiles/bin/git-wtf --all-commits --long --all'
+	wtf = !sh -c '~/bin/git-wtf --all-commits --long --all'
 [branch]
 	autosetuprebase = always
 [color]

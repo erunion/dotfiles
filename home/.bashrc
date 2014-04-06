@@ -84,7 +84,6 @@ alias l='ls -CF'
 alias scavenge='find -L . -type f | xargs grep -i'
 alias fixdate='sudo /etc/cron.daily/ntpdate'
 alias isrunning='ps aux | grep'
-alias git=/usr/local/bin/git
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -158,7 +157,7 @@ export PATH="/usr/local/packer:$PATH"
 # php 5.5 via homebrew
 export PATH="$(brew --prefix josegonzalez/php/php55)/bin:$PATH"
 
-source ~/dotfiles/bash/git-completion.bash
+source ~/bin/git-completion.bash
 export CLICOLOR=1
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
