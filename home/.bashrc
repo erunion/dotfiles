@@ -81,7 +81,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias scavenge='find -L . -type f | xargs grep -i'
+alias scavenge='find -L . -type f -print0 | xargs -0 grep -i'
 alias isrunning='ps aux | grep'
 
 # Alias definitions.
