@@ -1,15 +1,9 @@
 dotfiles
 ---
 
-This repository is built for use with [homesick](https://github.com/technicalpickles/homesick).
-
 #### Install
 
-```
-gem install homesick
-homesick clone jonursenbach/dotfiles
-homesick symlink dotfiles
-```
+Symlink whatever config files you need installed.
 
 ##### Sublime Text 2 Packages/Settings
 ```
