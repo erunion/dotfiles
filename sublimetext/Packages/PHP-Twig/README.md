@@ -3,43 +3,46 @@
 A [TextMate][textmate] _(and [Sublime Text][sublime])_ bundle for [Twig][twig].
 
 
-### Thanks
+## Thanks
 
 I'd like to thank a few people that have helped me out with the creation of this bundle.
 
 * __taavi__ for fixing a bug stopping the bundle from actually working in TextMate.
 * __DuoSRX__ for contributing a bunch of snippets.
-* __Infininight__ in __##textmate__ _(freenode)_ for helping me a ton with the rewrite.
-* __csuarez__ for contributing an updated theme.
+* __Infininight__ in __#textmate__ _(freenode)_ for helping me a ton with the rewrite.
 
 
-### Notes
+## Notes
 
 This is my first tmbundle and it was made and tested in [Sublime Text][sublime]. Everything should work fine, but if something doesn't please report it and I'll do my best to get it fixed.
 
 I'm also not extremely familiar with TextMate's method of creating language syntaxes. If anyone has any input on optimizing it or on anything else, such as choices in grammar scopes, please feel free to let me know.
 
 
-### Installation
+## Installation
 
 TextMate, and most editors that support TextMate bundles, allow the installation of bundles simply by extracting an archive or cloning the repository into the application's bundle directory. This bundle is no different. Below is a list of common bundle directories.
 
 
-#### Sublime Text
+### Sublime Text
 
 To install this bundle in Sublime Text, a few extra steps are required.
 
 1. Open Sublime Text and in the _Preferences_ menu click _Browse Packages_.
 2. In the directory that was just opened, create a new directory `PHP-Twig/`.
-3. Move the contents of the `Syntaxes/` directory of this repo into the directory you just created.
+3. Move the contents of the `Preferences/`, `Snippets/`, and `Syntaxes/` directories of this repo into the directory you just created.
 4. Restart Sublime Text.
 
-#### TextMate
+### TextMate
 
     /Library/Application Support/TextMate/Bundles
 
+### TextMate 2
 
-### Scopes
+You can install this bundle in TextMate 2 by opening the preferences and going to the bundles tab. After installation it will be automatically updated for you.
+
+
+## Scopes
 
 To aid theming, here's a list of what each Twig element is scoped to.
 
@@ -106,18 +109,6 @@ To aid theming, here's a list of what each Twig element is scoped to.
     Macros:            meta.function-call.twig
 
 
-### Extras
-
-I included a few additional things in `/Extras`. There is a screenshot _(same one as displayed below)_ of the bundle in it's current state, as well as the 3 themes I'm maintaining, plus some user contributed ones, that were updated to better accompany this bundle.
-
-
-### Screenshot
-[![Preview][preview-thumb]][preview]
-
-
 [sublime]: http://www.sublimetext.com/
 [textmate]: http://macromates.com/
 [twig]: http://www.twig-project.org/
-[preview]: https://github.com/Anomareh/PHP-Twig.tmbundle/raw/master/Extras/Preview/preview.png
-
-[preview-thumb]: https://github.com/Anomareh/PHP-Twig.tmbundle/raw/master/Extras/Preview/preview-thumb.png

@@ -1,20 +1,63 @@
-# Colour Schemes
+# Colour Schemes by Dayle Rees.
 
-Hi there! My name's Dayle Rees and I'm one of the Laravel PHP framework core developers. Part of the Laravel mentality is that coding should be enjoyable for the coder, not just the client receiving your hard work. For this reason I'd like to share with you a number of themes for some popular text editors that will hopefully be pleasing to your eyes, and allow you to enjoy the time you spend in front of the screen.
+[![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.1.0/dist/gittip.png)](https://www.gittip.com/daylerees)
 
-The themes in this package are currently compatible with Sublime Text 2, Textmate, VIM and a whole bunch of Java editors that use the IntelliJ scheme engine like PHPstorm! I hope to add more editors in the near future.
+Hi there! My name's Dayle Rees and I'm one of the Laravel PHP framework team. Part of the Laravel mentality is that coding should be enjoyable for the developer and not just for the client receiving your hard work. For this reason, I'd like to share with you a number of themes for some popular text editors that will hopefully be pleasing to your eyes and allow you to enjoy the time you spend in front of the screen.
+
+Oh also, I'm British. I'm not making a spelling mistake. It is COLOUR. With the U ;)
+
+This package currently supports colour schemes for:
+
+- [Sublime Text](http://www.sublimetext.com/) (2 & 3)
+- [Sublime Text UI](http://www.sublimetext.com/) (2 & 3)
+- [Textmate](http://macromates.com/) (Use sublime schemes)
+- [Coda 2](https://panic.com/coda/)
+- [VIM](http://www.vim.org/)
+- [Jetbrains Editors](http://www.jetbrains.com/) (inc. PHPStorm)
+- [Google Code Prettify](https://code.google.com/p/google-code-prettify/)
+- [Highlight JS](http://highlightjs.org/)
+- [Xcode](https://developer.apple.com/xcode/)
+- [Bootstrap](http://getbootstrap.com/)
+- Previews - HTML previews of all schemes.
+
+## Preview
+
+Instead of spamming this readme file with a thousand screenshots, I've created a page where you can preview all of the schemes in HTML.
+
+[Colour Schemes Demo Page](http://daylerees.github.io/)
+
+## Compatibility
+
+Themes in this package are generated from a custom theme file. They must be mapped once for each editor. The mapping process varies upon the editor, and for that reason some editors are considered very WIP. Don't worry. We'll get there.
+
+Scheme type                                | Compatibility %
+------------------------------------------ | ------------------------
+Sublime Text (Colour Schemes)              | 98%
+Sublime Text (UI Themes)                   | 90%
+Coda                                       | 90%
+Jetbrains (inc PHPStorm)                   | 60%
+Bootstrap (Variables)                      | 80%
+VIM                                        | 70%
+Google Pretty Print                        | 95%
+HTML Previews                              | 100%
+Highlight.JS                               | 60%
+Xcode                                      | 90%
 
 ## Installation
 
-### Sublime Text 2
+Installation of the colour schemes depends greatly upon the type of software that you intend to use them with. Here are the guides for common editors and libraries.
 
-For the sublime text 2 editor the themes can be installed easily by using [Package Control](http://wbond.net/sublime_packages/package_control) to install the 'Dayle Rees Color Schemes' package from the official repository.
+### Sublime Text
 
-Otherwise, first find your Sublime Text 2 packages directory, you can find this by using the `Preferences -> Browse Packages` menu from within Sublime Text 2.
+With the Sublime Text editor the themes can be installed using [Package Control](http://wbond.net/sublime_packages/package_control). Simply install the `Dayle Rees Color Schemes` package from the official repository.
 
-Now either create a `daylerees - themes` folder within this directory, and copy the contents of the github repository inside, or clone the repo using the GIT software within the packages directory :
+Otherwise, you must first find your Sublime Text 2 packages directory. You can find this by using the `Preferences -> Browse Packages` menu from within Sublime Text.
 
-	git clone https://github.com/daylerees/colour-schemes.git daylerees-themes
+Next either create a `daylerees - themes` folder within this directory, and copy the contents of the github repository inside, or clone the repository using the GIT software within the packages directory :
+
+```sh
+$ git clone https://github.com/daylerees/colour-schemes.git daylerees-themes
+```
 
 Now simply use the `Color Schemes` option of your preferences menu to switch between themes, enjoy!
 
@@ -22,283 +65,111 @@ Now simply use the `Color Schemes` option of your preferences menu to switch bet
 
 Clone the repository and copy the theme files into `~/Library/Application\ Support/TextMate/Themes/`:
 
-    $ git clone https://github.com/daylerees/colour-schemes.git daylerees-themes
-    $ cd daylerees-themes
-    $ mkdir ~/Library/Application\ Support/TextMate/Themes/
-    $ cp *.tmTheme ~/Library/Application\ Support/TextMate/Themes/
+```sh
+$ git clone https://github.com/daylerees/colour-schemes.git daylerees-themes
+$ cd daylerees-themes/sublime
+$ mkdir ~/Library/Application\ Support/TextMate/Themes/
+$ cp *.tmTheme ~/Library/Application\ Support/TextMate/Themes/
+```
 
 ### Textmate 2
 
 Clone the repository and copy the theme files into `~/Library/Application\ Support/TextMate/Managed/Bundles/Themes.tmbundle/Themes/`:
 
-    $ git clone https://github.com/daylerees/colour-schemes.git daylerees-themes
-    $ cd daylerees-themes
-    $ cp *.tmTheme ~/Library/Application\ Support/TextMate/Managed/Bundles/Themes.tmbundle/Themes/
+```sh
+$ git clone https://github.com/daylerees/colour-schemes.git daylerees-themes
+$ cd daylerees-themes/sublime
+$ cp *.tmTheme ~/Library/Application\ Support/TextMate/Managed/Bundles/Themes.tmbundle/Themes/
+```
 
 Note that you cannot clone the repository into the Themes directory -- as of this writing TextMate 2 will not recursively scan subdirectories searching for themes. Also note that you cannot symlink the themes into the Themes directory either -- TextMate will hang attempting to process them.
 
 ### VIM
 
-## Manual
+There are multiple methods of installing the colour schemes when using VIM.
 
-Download or clone with git, the themes into your `.vim/colors` directory.
+#### Manual
 
-## Vundle
+Download or clone the colour schemes repository with git into your `.vim/colors` directory.
+
+#### Vundle
 
 Add the following to your `.vimrc`:
 
 ```viml
-Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
+Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
 ```
 
-Either way you install it, just add the following line to your `.vimrc`:
+---
+
+Whichever installation method you choose, simply add the following line to your `.vimrc`:
 
 ```viml
 colorscheme <scheme-name-here>
 ```
 
-Save and launch vim to use, enjoy!
+Save and re-launch vim to use, enjoy!
 
 ### IntelliJ
 
 See the documentation for your editor, this varies between each one!
 
-## The Themes
+### Sublime UI Themes
 
+**WARNING**: These are work in progress. Some themes may look strange. Be sure to raise an issue though! :)
 
-The editor used in the screenshots is [Sublime Text 2](http://www.sublimetext.com/) on Mac OSX with the font [Source Code Pro](http://blogs.adobe.com/typblography/2012/09/source-code-pro.html).
+The Sublime UI themes are based on [Space Gray](http://kkga.github.io/spacegray/) by [kkga_](http://twitter.com/kkga_).
 
-### Hyrule
+The above theme **MUST** be installed before enabling my UI themes, since it uses its assets. You must also install this colour schemes package as per usual.
 
-Requested by Taylor Otwell of Laravel, a Zelda theme!
+Once `Space Gray` is installed (does not need to be active), add the following line to your user configuration file.
 
-![Hyrule](https://raw.github.com/daylerees/colour-schemes/master/screenshots/hyrule.png)
+    "theme": "<themename>.sublime-theme",
 
-### BlueDawn
+Where `<themename>` is the lowercase filename of the theme located in the `/sublimeui` directory. Choose whichever theme you like, it doesn't need to match the colourscheme. For example:
 
-Inspired by Tron Legacy this theme provides increased contrast and brighter comments.
+    "theme": "piggy.sublime-theme",
 
-![BlueDawn](https://raw.github.com/daylerees/colour-schemes/master/screenshots/bluedawn.png)
+Enjoy!
 
-### BoxUK
+### Xcode Colour Schemes
 
-A subtle blue and green theme dedicated to my current employer BoxUK, home to passionate web developers. If you are looking for work and passionate about development [see the website](http://www.boxuk.com/careers/overview/) for employment details.
+Copy the schemes that you choose from the `xcode` folder to:
 
-![BoxUK](https://raw.github.com/daylerees/colour-schemes/master/screenshots/boxuk.png)
+    ~/Library/Developer/Xcode/UserData/FontAndColorThemes
 
-### Carbonight
+Now the schemes will be available within the Xcode preferences.
 
-For boring people.
+### Bootstrap
 
-![Carbonight](https://raw.github.com/daylerees/colour-schemes/master/screenshots/carbonight.png)
+To use the bootstrap colour themes, you must be using the `LESS` version of bootstrap. Simply replace the contents of `variables.less` with one of the files within the `bootstrap` directory.
 
-### Darkside
+### HighlightJS
 
-Based on Pink Floyd's 'dark side of the moon', a request by Jamie Rumbelow.
+To use the Highlight.JS themes, simply use the appropriate CSS file from within the `highlightjs` directory.
 
-![Darkside](https://raw.github.com/daylerees/colour-schemes/master/screenshots/darkside.png)
+### Coda 2
 
-### Earthsong
+To install a Coda theme, enter the preferences for Code, click the 'Colors' tab, hit the cog icon and choose import to select a theme from the `coda` directory.
 
-An earthy request by Mr Dan Horrigan, happy to try.
+### Atom
 
-![Earthsong](https://raw.github.com/daylerees/colour-schemes/master/screenshots/earthsong.png)
+To install an atom theme, simply copy it from the `atom` directory to `~/.atom/packages`. Now you can select it from the settings menu. Enjoy!
 
-### Earthsong Light
+## Requests
 
-A lighter version of Earthsong.
-
-![Earthsong Light](https://raw.github.com/daylerees/colour-schemes/master/screenshots/earthsonglight.png)
-
-### FreshCut
-
-A fresh green and blue theme.
-
-![FreshCut](https://raw.github.com/daylerees/colour-schemes/master/screenshots/freshcut.png)
-
-### Frontier
-
-Strong rich colours.
-
-![Frontier](https://raw.github.com/daylerees/colour-schemes/master/screenshots/frontier.png)
-
-### Github
-
-I love Github, and everything it has done for the open source community, thanks for everything!
-
-![Github](https://raw.github.com/daylerees/colour-schemes/master/screenshots/github.png)
-
-### Gloom
-
-Here's a gloomy alternative to peacock! I thought it looked cool, maybe you do too?
-
-![Gloom](https://raw.github.com/daylerees/colour-schemes/master/screenshots/gloom.png)
-
-
-### Goldfish
-
-Orange and blue theme.
-
-![Goldfish](https://raw.github.com/daylerees/colour-schemes/master/screenshots/goldfish.png)
-
-### Glowfish
-
-A retro hacker theme, enjoy Glowfish!
-
-![Glowfish](https://raw.github.com/daylerees/colour-schemes/master/screenshots/glowfish.png)
-
-### Grunge
-
-A grungy green theme with some highlights.
-
-![Grunge](https://raw.github.com/daylerees/colour-schemes/master/screenshots/grunge.png)
-
-### Iceberg
-
-A chilly breeze.
-
-![Iceberg](https://raw.github.com/daylerees/colour-schemes/master/screenshots/iceberg.png)
-
-### Laravel
-
-An orange tribute to the Laravel PHP Framework.
-
-![Laravel](https://raw.github.com/daylerees/colour-schemes/master/screenshots/laravel.png)
-
-### Laravel Darker
-
-A darker version of the Laravel theme requested by Fernando Montoya.
-
-![Laravel Darker](https://raw.github.com/daylerees/colour-schemes/master/screenshots/laraveldarker.png)
-
-### LastNight
-
-First 3rd party submission from Spielberg0, based on the Sublime Text Tomorrow Night theme, thanks!
-
-![LastNight](https://raw.github.com/daylerees/colour-schemes/master/screenshots/lastnight.png)
-
-### Lavender
-
-Here's a theme for people of all genders, faiths, height, weight, race and status, apart from Kevin Bacon, cos those EE adverts are just terrible.
-
-![Lavender](https://raw.github.com/daylerees/colour-schemes/master/screenshots/lavender.png)
-
-### Mellow
-
-Gentle and soothing.
-
-![Mellow](https://raw.github.com/daylerees/colour-schemes/master/screenshots/mellow.png)
-
-### Patriot
-
-Salute the flag.
-
-![Patriot](https://raw.github.com/daylerees/colour-schemes/master/screenshots/patriot.png)
-
-### Peacock
-
-Show your colours!
-
-![Peacock](https://raw.github.com/daylerees/colour-schemes/master/screenshots/peacock.png)
-
-### Poyeyo
-
-A theme with hot/warm colours for code and cold colours for markup.
-
-Theme donated by Poyeyo.
-
-![Poyeyo](https://raw.github.com/daylerees/colour-schemes/master/screenshots/poyeyo.png)
-
-### Poyeyo Blue
-
-A theme with hot/warm colours for code and cold colours for markup. Blue background.
-
-Theme donated by Poyeyo.
-
-![PoyeyoBlue](https://raw.github.com/daylerees/colour-schemes/master/screenshots/poyeyoblue.png)
-
-### Potpourri
-
-A romantic red and purple theme.
-
-![Potpourri](https://raw.github.com/daylerees/colour-schemes/master/screenshots/potpourri.png)
-
-### Revelation
-
-Smart blue and yellow.
-
-![Revelation](https://raw.github.com/daylerees/colour-schemes/master/screenshots/revelation.png)
-
-### Slime
-
-Saved by Meroje.
-
-![Slime](https://raw.github.com/daylerees/colour-schemes/master/screenshots/slime.png)
-
-### Snappy
-
-Be snappy!
-
-![Snappy](https://raw.github.com/daylerees/colour-schemes/master/screenshots/snappy.png)
-
-### Snappy Light
-
-Be snappy but lighter!
-
-![Snappy Light](https://raw.github.com/daylerees/colour-schemes/master/screenshots/snappylight.png)
-
-### Sourlick
-
-Orange and lime green, sharp sweetness.
-
-![Sourlick](https://raw.github.com/daylerees/colour-schemes/master/screenshots/sourlick.png)
-
-### Spearmint
-
-With added fresh breath.
-
-![Spearmint](https://raw.github.com/daylerees/colour-schemes/master/screenshots/spearmint.png)
-
-### Stark
-
-Suit up.
-
-![Stark](https://raw.github.com/daylerees/colour-schemes/master/screenshots/stark.png)
-
-### Tron
-
-Requested by Aurélien Thieriot!
-
-![Tron](https://raw.github.com/daylerees/colour-schemes/master/screenshots/tron.png)
-
-### Tron Legacy
-
-Aurélien Thieriot wasn't happy with just one theme, here's Tron Legacy!
-
-![TronLegacy](https://raw.github.com/daylerees/colour-schemes/master/screenshots/tronlegacy.png)
-
-### Userscape
-
-Ian Landsman requested a light theme, I give you Userscape.
-
-![Userscape](https://raw.github.com/daylerees/colour-schemes/master/screenshots/userscape.png)
-
-### Yule
-
-Ho Ho Hope you like it!
-
-![Yule](https://raw.github.com/daylerees/colour-schemes/master/screenshots/yule.png)
-
+- **Hyrule** - Requested by Taylor Otwell of Laravel, a Zelda theme!
+- **Darkside** - Based on Pink Floyd's 'dark side of the moon', a request by Jamie Rumbelow.
+- **Earthsong** - An earthy request by Dan Horrigan, happy to try.
+- **Tron** - Requested by Aurélien Thieriot!
+- **Tron Legacy** - Aurélien Thieriot wasn't happy with just one theme, here's Tron Legacy!
+- **Userscape** - Ian Landsman requested a light theme, I give you Userscape.
 
 ## Contribute
 
 If you would like to request a colourscheme, an alternate version of an existing scheme, or submit your own theme to the collection simply send an Issue or a Pull request.
 
 If you would like to buy me a beer for the time I have spent on these themes, my paypal address is [thepunkfan@gmail.com](mailto:thepunkfan@gmail.com), thanks a lot! :)
-
-## Thanks!
-
-Thanks to JetBrains for the IntelliJ colour scheme converter tool! https://github.com/JetBrains/colorSchemeTool
 
 ## Enjoy
 
