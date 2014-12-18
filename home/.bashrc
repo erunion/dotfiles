@@ -106,6 +106,9 @@ export PATH=$PATH:/var/lib/gems/1.8/bin
 # adding npm modules to my path
 export NODE_PATH="/usr/local/lib/node"
 
+# use latest git
+export PATH="/usr/local/git/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH"
+
 # ping prompt for adding the current git/svn branch to the terminal prompt.
 # via https://gist.github.com/790086
 parse_git_branch() {
