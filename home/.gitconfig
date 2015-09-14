@@ -2,7 +2,7 @@
 	email = jon@ursenba.ch
 	name = Jon Ursenbach
 [github]
-	user = jonursenbach
+	user = erunion
 [core]
 	excludesfile = ~/.gitignore_global
 [alias]		
@@ -16,7 +16,7 @@
 	lasttag = for-each-ref refs/tags --format='%(refname:short)' --sort=-taggerdate --count 1
 	xtags = for-each-ref refs/tags --format='%(refname:short) (%(taggerdate))' --sort=-taggerdate --count
 	logs = log --stat --decorate
-	me = log --author="jonursenbach" --after=yesterday --no-merges --reverse
+	me = log --author="erunion" --after=yesterday --no-merges --reverse
 	pop = stash pop
 	pushheroku = push heroku master
 	pushtag = push origin master
