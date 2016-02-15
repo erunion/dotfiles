@@ -1,0 +1,172 @@
+{
+  "basics": {
+    "name": "Jon Ursenbach",
+    "label": "Engineer",
+    "picture": "https://secure.gravatar.com/avatar/e808ad574bee85d078fa0f3c956901ff?s=300",
+    "email": "jon@ursenba.ch",
+    "phone": "(415) 763-5565",
+    "website": "",
+    "summary": "",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "",
+      "countryCode": "",
+      "region": ""
+    },
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "jonursenbach",
+        "url": "https://twitter.com/jonursenbach"
+      },
+      {
+        "network": "Github",
+        "username": "erunion",
+        "url": "https://github.com/erunion"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Vimeo",
+      "position": "Senior Engineer, API",
+      "website": "https://vimeo.com/",
+      "startDate": "2016-03-21",
+      "endDate": "",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "Zillow",
+      "position": "Full Stack PHP Engineer",
+      "website": "https://www.zillow.com/rental-manager/",
+      "startDate": "2014-09-02",
+      "endDate": "2016-02-26",
+      "summary": "",
+      "highlights": [
+        "Migrated an internal address information API, Malone, used by the entire company, from a legacy homegrown framework over to Laravel, with zero downtime",
+        "Lead migrating a rental listing site, Postlets, from the same homegrown framework over to Laravel.",
+        "Dropped Postlets unit test execution speed from 10 minutes to 2.5 through dependency injection and mocking objects.",
+        "Migrated Postlets into a SOA as part of a rebrand to become Zillow Rental Manager.",
+        "Build a small purpose application for our QA engineers to spin up and tear down test environments on AWS with one button.",
+        "Release manager"
+      ]
+    },
+    {
+      "company": "AOL",
+      "position": "Senior Software Engineer",
+      "website": "http://www.aol.com/",
+      "startDate": "2013-02-06",
+      "endDate": "2014-08-22",
+      "summary": "",
+      "highlights": [
+        "Helped create an event management system for the Engadget Events team.",
+        "Integrated the gdgt product into the Engadget brand. ",
+        "Worked on an initiative that had the goal of revolutionizing the backend publishing platform that all AOL blogs use."
+      ]
+    },
+    {
+      "company": "gdgt",
+      "position": "Senior Engineer",
+      "website": "http://gdgt.com",
+      "startDate": "2009-09-03",
+      "endDate": "2013-02-06",
+      "summary": "Acquired by AOL in February 2013.",
+      "highlights": [
+        "Reworked our product reviewing system to allow for granular rating of product features, something nobody else was doing. It was successful enough that it became the main focus of the website going forward as we found users preferred to quickly review products with a set of checkboxes than write long-form reviews.",
+        "Headed the complete rewrite, v2.0, where we rewrote every aspect of the site to remove cruft from the original overseas contractors that wrote the site, which allowed us to quickly iterate on new features.",
+        "Converted the discussion system from a heavily modified bbPress installation to a new architecture that allows users to tag discussions for better canonicalization and discovery.",
+        "Moved our product specification database from a cluttered database schema in MySQL over to a simpler structured dataset in MongoDB that allowed us to build better products (product finder, product comparison) on it.",
+        "Constructed a product successor and predecessor system that allowed our product team to formulate product lineage, which alerted users that a new product was available either by email alerts, or by viewing an old product page.",
+        "Open sourced an app store scraper, MarketBot, that allowed the product team to add apps from Google Play, Windows Phone and the Amazon App Store for our \"Best Apps\" feature — something that would’ve been impossible to do with the current lack of public APIs for that data.",
+        "Created our mobile site by means of browser detection in our custom router, Route66, to send mobile requests to slimmed down controllers and mobile-only views.",
+        "Light devops.",
+        "Interviewing candidates.",
+        "Mentoring new engineers."
+      ]
+    },
+    {
+      "company": "Decorati, Inc.",
+      "position": "Senior Web Develop",
+      "website": "http://decorati.com",
+      "startDate": "2008-06",
+      "endDate": "2009-08",
+      "summary": "",
+      "highlights": [
+        "Created a PayPal-based billing system to handle industry-specific online purchases.",
+        "Profiled and fixed bottlenecks in our homegrown MVC framework to handle a rapid increase in traffic.",
+        "Completely rebuilt the methods we stored products to alleviate legacy issues and accommodate new business needs.",
+        "Release manager"
+      ]
+    },
+    {
+      "company": "Deniro Marketing, LLC.",
+      "position": "Web Developer",
+      "website": "http://www.deniromarketing.com/",
+      "startDate": "2006-10",
+      "endDate": "2008-06",
+      "summary": "",
+      "highlights": [
+        "Created an image storage engine, codenamed Hashbrowns, to replace an existing installation of MogileFS. Hashbrowns handled growing traffic needs in ways that MogileFS could not, saving Deniro a remarkable amount of server costs.",
+        "Lead architect behind the creation of a complete billing system to replace an existing, flawed version that was causing daily problems. The new billing system had a completely pluggable architecture that allowed for the easy creation, and support, of new billing processors, a business necessity. The new system saved valuable developer time and money. ",
+        "Lead architect behind a customer service portal for managing customer billing data. This enabled CSRs, in the office and call centers, to easily issue refunds, handle chargebacks and fraudulent purchasers as well as audit charges.",
+        "Scaled the affiliate iFrame server requirements down 75% in conjunction with heavy SQL optimizations and intelligent use of Memcached for caching query results."
+      ]
+    },
+    {
+      "company": "Decoy Media",
+      "position": "Engineer, Co-Founder",
+      "website": "",
+      "startDate": "2006-05",
+      "endDate": "2008-07",
+      "summary": "",
+      "highlights": [
+        "Creator of a small browser-based MMORPG, Medieval Battles.",
+        "Served as project manager, including writing game and feature specs, iterative discussions with cofounder, and development execution.",
+        "Served as community manager, including collecting and responding to feedback and collecting user experiences for improved game design & development."
+      ]
+    },
+    {
+      "company": "Expo Marketing & Services, Inc.",
+      "position": "Freelance Webmaster",
+      "website": "",
+      "startDate": "2006-04",
+      "endDate": "2007-04",
+      "summary": "",
+      "highlights": [
+        "Developed multiple PHP & MySQL-driven websites",
+        "Maintained website content on a weekly basis. Worked in conjunction with the design and marketing teams to ensure brand integrity."
+      ]
+    },
+    {
+      "company": "WebCity Press",
+      "position": "Web Developer / Production Assistant",
+      "website": "http://webcitypress.com/",
+      "startDate": "2005-06",
+      "endDate": "2006-05",
+      "summary": "",
+      "highlights": [
+        "Created and maintained websites and advertisements for clients.",
+        "Assisted in the creation and weekly production of numerous television shows in real estate markets all over the country.",
+        "Conducted research for both internal and client projects."
+      ]
+    }
+  ],
+  "volunteer": [],
+  "education": [],
+  "awards": [],
+  "publications": [
+    {
+      "name": "Chrome OS running on VMWare",
+      "publisher": "Engadget",
+      "releaseDate": "2009-11-20",
+      "website": "http://www.engadget.com/2009/11/20/how-to-run-chrome-os-as-a-virtual-machine/",
+      "summary": "I was the first person in the world to compile Chrome OS and make it available to the general public by way of a VMWare image. "
+    }
+  ],
+  "skills": [],
+  "languages": [],
+  "interests": [],
+  "references": []
+}
