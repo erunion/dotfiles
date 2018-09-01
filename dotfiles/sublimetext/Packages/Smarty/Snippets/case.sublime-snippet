@@ -1,9 +1,0 @@
-<snippet>
-    <content><![CDATA[
-${SMARTY_LDELIM:\{}case ${1:case_name}${SMARTY_RDELIM:\}}
-    $0
-    ${2:${SMARTY_LDELIM:\{}break${SMARTY_RDELIM:\}}}
-]]></content>
-    <tabTrigger>case</tabTrigger>
-    <scope>text.html.smarty,source.smarty</scope>
-</snippet>

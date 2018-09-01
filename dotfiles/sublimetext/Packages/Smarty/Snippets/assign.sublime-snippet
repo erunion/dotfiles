@@ -1,7 +1,0 @@
-<snippet>
-	<content><![CDATA[
-${SMARTY_LDELIM:\{}assign var="${1:name}" value=${2:value}${4: scope=${3:scope}}${SMARTY_RDELIM:\}}$0
-]]></content>
-	<tabTrigger>assign</tabTrigger>
-	<scope>text.html.smarty,source.smarty</scope>
-</snippet>
