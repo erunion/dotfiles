@@ -148,7 +148,7 @@ pimp_prompt
 
 export EDITOR=nano
 
-# php 5.5 via homebrew
+# php via homebrew
 export PATH="$(brew --prefix php)/bin:$PATH"
 
 source ~/bin/git-completion.bash
