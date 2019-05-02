@@ -1,8 +1,0 @@
-{
-  "scripts": {
-    "pdf": "resume export resume.pdf"
-  },
-  "dependencies": {
-    "resume-cli": "^0.4.8"
-  }
-}
