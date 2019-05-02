@@ -69,8 +69,6 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -150,11 +148,8 @@ pimp_prompt
 
 export EDITOR=nano
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# php 5.5 via homebrew
-export PATH="$(brew --prefix php55)/bin:$PATH"
+# php via homebrew
+export PATH="$(brew --prefix php)/bin:$PATH"
 
 source ~/bin/git-completion.bash
 export CLICOLOR=1
