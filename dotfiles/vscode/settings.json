@@ -1,0 +1,16 @@
+{
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "[python]": {
+        "editor.rulers": [79],
+    },
+    "javascript.validate.enable": false,
+    "workbench.colorTheme": "GitHub Plus",
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": 0,
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+    "editor.wordWrap": "on",
+    "files.trimTrailingWhitespace": true
+}
