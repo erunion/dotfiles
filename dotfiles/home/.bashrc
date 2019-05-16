@@ -149,7 +149,7 @@ pimp_prompt
 export EDITOR=nano
 
 # php via homebrew
-export PATH="$(brew --prefix php)/bin:$PATH"
+export PATH="$(brew --prefix php@7.2)/bin:$PATH"
 
 source ~/bin/git-completion.bash
 export CLICOLOR=1
