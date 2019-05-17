@@ -1,16 +1,68 @@
 {
-    "[javascript]": {
+    "[css]": {
+        "editor.rulers": [100],
         "editor.tabSize": 2
+    },
+    "[go]": {
+        "editor.rulers": [120]
+    },
+    "[javascript]": {
+        "editor.rulers": [100],
+        "editor.tabSize": 2
+    },
+    "[javascriptreact]": {
+        "editor.rulers": [100],
+        "editor.tabSize": 2
+    },
+    "[markdown]": {
+        "editor.rulers": [80]
+    },
+    "[php]": {
+        "editor.rulers": [120]
     },
     "[python]": {
         "editor.rulers": [79],
+        "editor.tabSize": 4
     },
-    "javascript.validate.enable": false,
-    "workbench.colorTheme": "GitHub Plus",
-    "editor.minimap.enabled": false,
-    "window.zoomLevel": 0,
-    "editor.fontSize": 14,
+    "[scss]": {
+        "editor.rulers": [100],
+        "editor.tabSize": 2
+    },
     "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all",
     "editor.wordWrap": "on",
-    "files.trimTrailingWhitespace": true
+    "eslint.options": {
+        "parserOptions": {
+            "ecmaVersion": 6
+        }
+    },
+    "eslint.validate": [
+        "javascript"
+    ],
+    "explorer.autoReveal": false,
+    "files.associations": {
+        "*.deploy": "dockerfile"
+    },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "php.suggest.basic": false,
+    "php.validate.executablePath": "/usr/local/bin/php",
+    "python.linting.pep8Enabled": true,
+    "standard.enable": true,
+    "standard.options": {
+        "env": [
+            "mocha"
+        ]
+    },
+    "standard.run": "onType",
+    "standard.validate": [
+        "javascript",
+        "javascriptreact"
+    ],
+    "window.title": "${activeEditorMedium}${separator}${rootName}",
+    "workbench.colorTheme": "GitHub Plus",
+    "window.zoomLevel": 0,
+    "workbench.statusBar.feedback.visible": false
 }
