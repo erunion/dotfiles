@@ -65,23 +65,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias scavenge='find -L . -type f -print0 | xargs -0 grep -i'
-alias isrunning='ps aux | grep'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -97,15 +80,6 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-# adding rubygems to my path
-export PATH=$PATH:/var/lib/gems/1.8/bin
-
-# adding npm modules to my path
-export NODE_PATH="/usr/local/lib/node"
-
-# use latest git
-export PATH="/usr/local/git/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH"
 
 # ping prompt for adding the current git/svn branch to the terminal prompt.
 # via https://gist.github.com/790086
@@ -139,7 +113,6 @@ pimp_prompt() {
     TITLEBAR=""
     ;;
   esac
-#PS1="${TITLEBAR}[$WHITE\u@$BLUE_BOLD\h$WHITE \w$GREEN\$(parse_git_branch)\$(parse_svn_revision) $RED\$(~/.rvm/bin/rvm-prompt v g)$WHITE]\$ "
 PS1="${TITLEBAR}[$WHITE\u@$BLUE_BOLD\h$WHITE \w$GREEN\$(parse_git_branch)\$(parse_svn_revision)$WHITE]\$ "
 PS2='> '
 PS4='+ '
@@ -148,7 +121,7 @@ pimp_prompt
 
 export EDITOR=nano
 
-# php via homebrew
+export GOPATH=$HOME/go
 export PATH="$(brew --prefix php@7.2)/bin:$PATH"
 
 source ~/bin/git-completion.bash

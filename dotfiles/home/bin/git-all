@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# Stage all unstaged.
-#
-# Stolen from: https://github.com/holman/dotfiles/blob/master/bin/git--all
-
-git add -A

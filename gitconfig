@@ -5,28 +5,20 @@
 	user = erunion
 [core]
 	excludesfile = ~/.gitignore_global
-[alias]		
-	all = !sh -c '~/bin/git-all'
+[alias]
+	all = add -A
 	amend = commit --amend
 	ci = commit
 	co = checkout
 	diffs = diff --staged
 	info = !sh -c '~/bin/git-info'
-	lastcommit = log --stat --decorate -n 1
-	lasttag = for-each-ref refs/tags --format='%(refname:short)' --sort=-taggerdate --count 1
 	xtags = for-each-ref refs/tags --format='%(refname:short) (%(taggerdate))' --sort=-taggerdate --count
 	logs = log --stat --decorate
-	me = log --author="erunion" --after=yesterday --no-merges --reverse
 	pop = stash pop
-	pushheroku = push heroku master
 	pushtag = push origin master
 	pushtags = push origin master --tags
 	pushup = push origin master
-	rank-contributors = !sh -c '~/bin/git-rank-contributors'
-	re-up = ~sh -c '~/bin/git-up'
-	st = status	
-	standup = log --since='1 day ago' --oneline --author='jon@ursenba.ch'
-	undo = !sh -c '~/bin/git-undo'
+	st = status
 	unstage = reset HEAD
 	up = !sh -c '~/bin/git-up'
 	whichtag = tag --contains
@@ -40,7 +32,7 @@
 	current = yellow reverse
 	local = yellow
 	remote = green
-[color "diff"]	
+[color "diff"]
 	frag = magenta bold
 	meta = yellow bold
 	new = green bold

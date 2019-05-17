@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# Undo your last commit, but don't throw away your changes
-#
-# Stolen from: https://github.com/holman/dotfiles/blob/master/bin/git-undo
-
-git reset --soft HEAD^
