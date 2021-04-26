@@ -121,8 +121,8 @@ pimp_prompt
 
 export EDITOR=nano
 
-export GOPATH=$HOME/go
-export PATH="$(brew --prefix php@7.2)/bin:$PATH"
+#export GOPATH=$HOME/go
+#export PATH="$(brew --prefix php@7.2)/bin:$PATH"
 
 source ~/bin/git-completion.bash
 export CLICOLOR=1

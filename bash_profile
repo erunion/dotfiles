@@ -1,5 +1,3 @@
 [[ -s ~/.bashrc ]] && source ~/.bashrc
 
-# Google Cloud SDK
-[[ -s ~/google-cloud-sdk/path.bash.inc ]] && source ~/google-cloud-sdk/path.bash.inc
-[[ -s ~/google-cloud-sdk/completion.bash.inc ]] && source ~/google-cloud-sdk/completion.bash.inc
+export PATH="/usr/local/opt/php@7.3/bin:$PATH"
