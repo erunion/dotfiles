@@ -15,9 +15,8 @@
 	xtags = for-each-ref refs/tags --format='%(refname:short) (%(taggerdate))' --sort=-taggerdate --count
 	logs = log --stat --decorate
 	pop = stash pop
-	pushtag = push origin master
-	pushtags = push origin master --tags
-	pushup = push origin master
+	pushtags = push origin --tags
+	pushup = push origin
 	st = status
 	unstage = reset HEAD
 	up = !sh -c '~/bin/git-up'
