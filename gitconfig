@@ -11,7 +11,7 @@
 	ci = commit
 	co = checkout
 	diffs = diff --staged
-	info = !sh -c '~/bin/git-info'
+	info = !sh -c '~/code/erunion/dotfiles/bin/git-info'
 	xtags = for-each-ref refs/tags --format='%(refname:short) (%(taggerdate))' --sort=-taggerdate --count
 	logs = log --stat --decorate
 	pop = stash pop
@@ -19,10 +19,10 @@
 	pushup = push origin
 	st = status
 	unstage = reset HEAD
-	up = !sh -c '~/bin/git-up'
+	up = !sh -c '~/code/erunion/dotfiles/bin/git-up'
 	whichtag = tag --contains
 	whichbranch = branch --contains
-	wtf = !sh -c '~/bin/git-wtf --all-commits --long --all'
+	wtf = !sh -c '~/code/erunion/dotfiles/bin/git-wtf --all-commits --long --all'
 [branch]
 	autosetuprebase = always
 [color]
