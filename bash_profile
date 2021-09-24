@@ -1,3 +1,5 @@
-[[ -s ~/.bashrc ]] && source ~/.bashrc
+if [ -f ~/.git-completion.bash ]; then
+  . ~/bin/git-completion.bash
+fi
 
-export PATH="/usr/local/opt/php@7.3/bin:$PATH"
+[[ -s ~/.bashrc ]] && source ~/.bashrc
