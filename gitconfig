@@ -5,6 +5,7 @@
 	user = erunion
 [core]
 	excludesfile = ~/.gitignore_global
+	pager = ""
 [alias]
 	all = add -A
 	amend = commit --amend
