@@ -106,6 +106,10 @@ export EDITOR=nano
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias scavenge='find -L . -type f -print0 | xargs -0 grep -i'
 
+dc-build-and-run() {
+  docker-compose build $1 && docker-compose run $1
+}
+
 # https://gist.github.com/SheldonWangRJT/8d3f44a35c8d1386a396b9b49b43c385
 # https://gist.github.com/mcmoe/c76895ee86bd5293d58aca7a75afb6b2
 function v2g() {
@@ -169,3 +173,8 @@ function v2g() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="/users/erunion/Library/Python/3.8/bin:$PATH"
