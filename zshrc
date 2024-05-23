@@ -110,6 +110,10 @@ dc-build-and-run() {
   docker-compose build $1 && docker-compose run $1
 }
 
+dc-build-and-up() {
+  docker-compose build $1 && docker-compose up $1
+}
+
 # https://gist.github.com/SheldonWangRJT/8d3f44a35c8d1386a396b9b49b43c385
 # https://gist.github.com/mcmoe/c76895ee86bd5293d58aca7a75afb6b2
 function v2g() {
