@@ -171,6 +171,16 @@ function v2g() {
     osascript -e "display notification \"$target successfully converted and saved\" with title \"v2g complete\""
 }
 
+gwt() {
+  local target="$1"
+  local wt_path
+  wt_path=$(git worktree list --porcelain | awk -v t="$target" '
+    /^worktree / { p=$2 }
+    /^branch /   { if ($2 ~ t) print p }
+  ')
+  [ -n "$wt_path" ] && cd "$wt_path" || echo "no worktree matching '$target'"
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -182,3 +192,4 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 export PATH="/users/erunion/Library/Python/3.8/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"

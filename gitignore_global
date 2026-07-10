@@ -7,3 +7,5 @@
 .vagrant/
 .vscode/
 .yarn/
+
+**/.claude/settings.local.json
